@@ -37,7 +37,7 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
 - Testing https://localhost:8000/carts/{cart_id} GET API to get the cart content. The returned object shloud follow this from:
 
 <p align="center">
-`{
+```{
     "cart": {
         "identifier": 1,
         "items": [
@@ -79,5 +79,6 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
             "total_amount": 725
         }
     }
-}`
+}
+```
 </p>

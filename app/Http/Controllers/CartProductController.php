@@ -31,12 +31,14 @@ class CartProductController extends Controller
         $this->validate($request, array(
             'product_id'   => 'required|integer',
             'quantity'   => 'required|integer',
+            'row_id'   => 'required|max:20',
         ));
 
         $product_id = $request->input('product_id');
 
         $cartProduct = CartProduct::where('product_id', $product_id)->where('cart_id', $id)->first();
         $cartProduct->quantity = $request->input('quantity');
+        $cartProduct->row_id = $request->input('row_id');
         $cartProduct->save();
         return response()->json($cartProduct, 201);
     }

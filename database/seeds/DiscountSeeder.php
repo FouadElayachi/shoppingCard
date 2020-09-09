@@ -14,7 +14,8 @@ class DiscountSeeder extends Seeder
         $dt = new DateTime();
         App\Discount::create([
             'code' => 'TestDevinweb',
-            'percentage' => 10
+            'percentage' => 10,
+            'created_at' => $dt->format('Y-m-d H:i:s')
         ]);
     }
 }

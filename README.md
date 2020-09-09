@@ -7,55 +7,31 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
-## About Laravel
+## Description
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
-
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
-
+Api endpoints for the management of a shopping cart instance to be used in an e-commerce website/App Based on Laravel.
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Learning Laravel
+## Installation
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- To install you should have PHP >= 7.3 installed.
+- You need also to install composer, if that's not the case you can just download It from here: https://getcomposer.org/doc/00-intro.md#downloading-the-composer-executable. 
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Usage
 
-## Laravel Sponsors
+- First clone the project: `git clone https://github.com/FouadElayachi/devinwebBackend-shoppingCard.git`.
+- Move to the project directory: `cd devinwebBackend-shoppingCard`
+- Install composer: `composer install`
+- create .env file and link It with you database informations.
+- create database tables: `php artisan migrate`.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+## APIs testing
 
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+- Create a row on the carts table.
+- Create multiple rows on the products table.
+- Testing https://localhost:8000/carts/{cart_id} POST API to add a product to the cart. Enter the following attributes: `product_id, quantity`.
+- Testing https://localhost:8000/carts/{cart_id} PUT API to edit a product on the cart. Enter the following attributes: `product_id, quantity, row_id`.
+- Testing https://localhost:8000/carts/{cart_id} DELETE API to delete a product from the cart. To do this maneuver you should have the `row_id`.
+- Add a row to the discounts table. Run `php artisan db:seed --class=DiscountSeeder`.
+- Testing https://localhost:8000/carts/{cart_id}/discount POST API to Attach the discount=TestDevinweb to a the cart and return the response. To do this maneuver you should send the `discount_code` in our case is "TestDevinweb".
+- Testing https://localhost:8000/carts/{cart_id} GET API to get the cart content.

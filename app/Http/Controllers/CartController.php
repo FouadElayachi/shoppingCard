@@ -23,6 +23,10 @@ class CartController extends Controller
         $discount_id = $discount->id;
 
         $cart->discounts()->attach($discount_id);
+
+        return response()->json(
+                $cart->discounts()->get()
+        );
     }
 
     public function getCartContent($id) {
@@ -66,7 +70,7 @@ class CartController extends Controller
             $discountDTO->code =  $discount->code;
             $discountDTO->value =  $discount->percentage;
             $discountDTO->discounted_amount =  ($priceOriginalSum * $discount->percentage) / 100;
-            $discount_amount = $discountDTO->discounted_amount;
+            $discount_amount += $discountDTO->discounted_amount;
             array_push($discountArray, $discountDTO);
         }
 

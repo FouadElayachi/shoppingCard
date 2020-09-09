@@ -34,4 +34,50 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
 - Testing https://localhost:8000/carts/{cart_id} DELETE API to delete a product from the cart. To do this maneuver you should have the `row_id`.
 - Add a row to the discounts table. Run `php artisan db:seed --class=DiscountSeeder`.
 - Testing https://localhost:8000/carts/{cart_id}/discount POST API to Attach the discount=TestDevinweb to a the cart and return the response. To do this maneuver you should send the `discount_code` in our case is "TestDevinweb".
-- Testing https://localhost:8000/carts/{cart_id} GET API to get the cart content.
+- Testing https://localhost:8000/carts/{cart_id} GET API to get the cart content. The returned object shloud follow this from:
+
+<p align="center">
+`{
+    "cart": {
+        "identifier": 1,
+        "items": [
+            {
+                "row_id": "SYxDRWGTKVkTwRtuecjF",
+                "product_id": 2,
+                "qty": 6,
+                "price": 100,
+                "options": [
+                    "public_urlB1",
+                    "public_urlB2"
+                ],
+                "tax": 30,
+                "subtotal": 630
+            },
+            {
+                "row_id": "SYxDRWGTKVkTwRtuesds",
+                "product_id": 1,
+                "qty": 1,
+                "price": 150,
+                "options": [
+                    "public_urlA1",
+                    "public_urlA2"
+                ],
+                "tax": 7.5,
+                "subtotal": 157.5
+            }
+        ],
+        "discount": [
+            {
+                "code": "TestDevinweb",
+                "discounted_amount": 25,
+                "value": 10
+            }
+        ],
+        "summary": {
+            "discount_amount": 25,
+            "tax": 37.5,
+            "total_amount": 725
+        }
+    }
+}`
+</p>

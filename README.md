@@ -36,7 +36,6 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
 - Testing https://localhost:8000/carts/{cart_id}/discount POST API to Attach the discount=TestDevinweb to a the cart and return the response. To do this maneuver you should send the `discount_code` in our case is "TestDevinweb".
 - Testing https://localhost:8000/carts/{cart_id} GET API to get the cart content. The returned object shloud follow this from:
 
-<p align="center">
 ```{
     "cart": {
         "identifier": 1,
@@ -81,4 +80,3 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
     }
 }
 ```
-</p>

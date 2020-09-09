@@ -229,4 +229,9 @@ return [
 
     ],
 
+    /***
+     * TAX Value
+     */
+    'tax' => env('TAX', 5.00)
+
 ];

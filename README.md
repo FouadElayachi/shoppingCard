@@ -20,7 +20,7 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
 ## Usage
 
 - First clone the project: `git clone https://github.com/FouadElayachi/devinwebBackend-shoppingCard.git`.
-- Move to the project directory: `cd devinwebBackend-shoppingCard`
+- Move to the project directory: `cd shoppingCard`
 - Install composer: `composer install`
 - create .env file and link It with you database informations.
 - create database tables: `php artisan migrate`.
